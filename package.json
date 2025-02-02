@@ -1,0 +1,25 @@
+{
+  "name": "websockets-topgg",
+  "version": "0.1.0",
+  "description": "A websocket client for websockets-topgg.com",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsx watch examples/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts"
+  },
+  "author": "_Woo_",
+  "license": "ISC",
+  "dependencies": {
+    "lru-cache": "^10.4.3",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@top-gg/eslint-config": "^0.0.4",
+    "@types/ws": "^8.5.14",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
