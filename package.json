@@ -15,7 +15,7 @@
   "author": "_Woo_",
   "license": "ISC",
   "dependencies": {
-    "lru-cache": "^10.4.3",
+    "lru-cache": "^11.0.2",
     "ws": "^8.18.0"
   },
   "devDependencies": {
