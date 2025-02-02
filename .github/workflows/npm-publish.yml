@@ -15,8 +15,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm ci
-#     - run: npm test
+      - name: Compile TypeScript
+        run: npm run build:ci
+      - name: Lint TypeScript
+        run: npm run lint:ci
 
   publish-npm:
     needs: build
