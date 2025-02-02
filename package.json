@@ -2,6 +2,19 @@
   "name": "websockets-topgg",
   "version": "0.1.1",
   "description": "A websocket client for websockets-topgg.com",
+  "keywords": [
+    "topgg",
+    "top.gg",
+    "votes"
+  ],
+  "homepage": "https://websockets-topgg.com",
+  "bugs": {
+    "url": "https://github.com/Team-Woo/websockets-topgg/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Team-Woo/websockets-topgg.git"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
