@@ -19,9 +19,12 @@
     "ws": "^8.18.0"
   },
   "devDependencies": {
-    "@top-gg/eslint-config": "^0.0.4",
+    "@eslint/js": "^9.19.0",
     "@types/ws": "^8.5.14",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.22.0"
   }
 }

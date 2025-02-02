@@ -132,7 +132,7 @@ export class TopWebsocket extends EventEmitter {
     if (!this.client) return;
 
     this.client.on("open", () => {
-      this.heartbeat;
+      this.heartbeat();
     });
 
     this.client.on("error", (error) => {
