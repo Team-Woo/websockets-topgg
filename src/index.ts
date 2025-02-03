@@ -4,6 +4,7 @@ import { WebSocket } from "ws";
 import { Close, Entity, Options, Ready, Reminder, User, Vote, OpCodes } from "./typings.js";
 
 import { LRUCache } from "lru-cache";
+import { throwApiError } from "./ApiError.js";
 
 const baseUrl = "api.websockets-topgg.com/v0";
 // const baseUrl = "localhost:4100"
@@ -257,6 +258,7 @@ export class TopWebsocket extends EventEmitter {
     const res = await this.fetchRequest(`/user/${userId}`, "GET");
 
     const user = await res.json();
+
     // Store the user in the cache
     this.userCache.set(userId, user);
 
@@ -268,10 +270,7 @@ export class TopWebsocket extends EventEmitter {
    * @returns {Promise<Entity>} and entity
    */
   getEntity = async (): Promise<Entity> => {
-    // send http request to get user and entity
-    const res = await fetch(`${apiBaseUrl}/entity`, {
-      headers: { Authorization: this.socketToken },
-    });
+    const res = await this.fetchRequest(`/entity`, "GET");
 
     return await res.json();
   };
@@ -302,7 +301,6 @@ export class TopWebsocket extends EventEmitter {
       enable,
     });
 
-    if (res.status === 404) return undefined;
     return await res.json();
   };
 
@@ -313,7 +311,7 @@ export class TopWebsocket extends EventEmitter {
    * @param {object} body The body of the request
    */
   private fetchRequest = async (path: string, method: string, body?: object): Promise<Response> => {
-    return await fetch(`${apiBaseUrl}${path}`, {
+    const res = await fetch(`${apiBaseUrl}${path}`, {
       method,
       headers: {
         Authorization: this.socketToken,
@@ -321,5 +319,7 @@ export class TopWebsocket extends EventEmitter {
       },
       body: body ? JSON.stringify(body) : null,
     });
+    if (!res.ok) throwApiError(res);
+    return res;
   };
 }
