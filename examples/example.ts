@@ -11,6 +11,9 @@ topWebsocket.connect();
 
 topWebsocket.on("ready", (data) => {
   console.log("Websocket is ready");
+  topWebsocket.getUser("136583532972605441").catch((error) => {
+    console.error("Error fetching user:", error);
+  });
 });
 
 topWebsocket.on("disconnected", (disconnection) => {

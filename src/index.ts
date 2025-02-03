@@ -319,7 +319,7 @@ export class TopWebsocket extends EventEmitter {
       },
       body: body ? JSON.stringify(body) : null,
     });
-    if (!res.ok) throwApiError(res);
+    if (!res.ok) await throwApiError(res);
     return res;
   };
 }

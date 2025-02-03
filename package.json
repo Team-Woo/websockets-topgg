@@ -18,7 +18,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "tsx watch examples/index.ts",
+    "dev": "tsx watch examples/example.ts",
     "start": "node dist/index.js",
     "build": "tsc",
     "build:ci": "npm i --include=dev && tsc",
