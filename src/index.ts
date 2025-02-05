@@ -271,7 +271,6 @@ export class TopWebsocket extends EventEmitter {
    */
   getEntity = async (): Promise<Entity> => {
     const res = await this.fetchRequest(`/entity`, "GET");
-
     return await res.json();
   };
 
@@ -301,7 +300,11 @@ export class TopWebsocket extends EventEmitter {
       enable,
     });
 
-    return await res.json();
+    const user = await res.json() as User | undefined;
+
+    this.userCache.set(userId, user);
+
+    return user;
   };
 
   /**
