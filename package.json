@@ -1,11 +1,13 @@
 {
   "name": "websockets-topgg",
-  "version": "0.2.2",
-  "description": "A websocket client for websockets-topgg.com",
+  "version": "0.2.3",
+  "description": "A real-time WebSocket client for Top.gg that converts webhooks into a persistent connection, enabling seamless vote tracking, reminders, and enhanced community engagement.",
   "keywords": [
     "topgg",
     "top.gg",
-    "votes"
+    "votes",
+    "websocket",
+    "websocket-client"
   ],
   "homepage": "https://websockets-topgg.com",
   "bugs": {
